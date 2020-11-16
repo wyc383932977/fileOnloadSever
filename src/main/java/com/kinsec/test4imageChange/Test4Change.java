@@ -1,4 +1,4 @@
-package com.kinsec.test2Sign;
+package com.kinsec.test4imageChange;
 
 import java.io.IOException;
 
@@ -12,21 +12,16 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import com.alibaba.fastjson.JSONObject;
 import com.kinsec.utils.MyUtils2;
 
-public class MainTest2 {
+public class Test4Change {
 
 	public static void main(String[] args) {
-		//centos
-//		String resource="/opt/wyccs/2.12TestCs/apache-tomcat-8.5.47/webapps/fileOnloadServerMVC/WEB-INF/classes/fileInput/dcs/blank.ofd";
-//		String fileFolder="/opt/wyccs/2.12TestCs/apache-tomcat-8.5.47/webapps/fileOnloadServerMVC/WEB-INF/classes/fileSignput/dcs/";
-//		String url="http://192.168.201.210:8080/fileOnloadServerMVC/fileSignTest";
-		//ft1500b
-		String resource="/opt/wyccs/apache-tomcat-8.5.47/webapps/fileOnloadServerMVC/WEB-INF/classes/fileOutput/dcs/07205146401545c1a574fe83e21bdfc7/mayun_trans.ofd";
-		String fileFolder="/opt/wyccs/apache-tomcat-8.5.47/webapps/fileOnloadServerMVC/WEB-INF/classes/fileSignput/dcs/";
-		String url="http://192.168.201.115:21105/fileOnloadServerMVC/fileSignTest";
+		String url="http://192.168.201.115:21105/fileOnloadServerMVC/imageChangeTest";
+		String resource="/opt/wyccs/apache-tomcat-8.5.47/webapps/fileOnloadServerMVC/WEB-INF/classes/fileInput/dcsimageChange";
+		String fileFolder="/opt/wyccs/apache-tomcat-8.5.47/webapps/fileOnloadServerMVC/WEB-INF/classes/fileOutput/dcs/";
 		int threadTimes=1;
 		int signTimes=1;
 		for (int i = 0; i < threadTimes; i++) {
-			Runnable FileThreadTest=new FileSignThreadTest(signTimes,resource,fileFolder,url);
+			Runnable FileThreadTest=new imageChangeThreadTest(signTimes,resource,fileFolder,url);
 			Thread thread=new Thread(FileThreadTest,"thread_"+i);
 			thread.start();
 		}
@@ -39,7 +34,7 @@ public class MainTest2 {
 		// http://192.168.5.91:8080/kinsecZeroMay/qureyCertAuthCount
 		// http://220.162.244.154:8080/kinsecZeroMay/qureyCertAuthCount
 		//192.168.201.210:8080
-		String url = "http://192.168.201.115:8080/fileOnloadServerMVC/fileSignTest";
+		String url = "http://192.168.201.210:8080/fileOnloadServerMVC/fileSignTest";
 		
 //		abs="CC392FF7038984089AAED7DC4525BDAF";
 		JSONObject jsonReq=new JSONObject();

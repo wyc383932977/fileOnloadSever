@@ -1,4 +1,4 @@
-package com.kinsec.fileOnloadUtils;
+package com.kinsec.fileDownloadUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class HttpRequest {
+public class FileDownloadUtils1 {
     /**
      * 从网络Url中下载文件
      * @param urlStr

@@ -3,8 +3,8 @@ package com.kinsec.test;
 import java.io.File;
 import java.io.IOException;
 
-import com.kinsec.fileOnloadUtils.HttpRequest;
-import com.kinsec.fileUtils.FileLoadTest;
+import com.kinsec.fileDownloadUtils.FileDownloadUtils1;
+import com.kinsec.fileUploadUtils.FileLoadUtils;
 
 public class SignSealThread implements Runnable{
 	private int times=0;
@@ -44,13 +44,13 @@ public class SignSealThread implements Runnable{
 			}
 			try {
 				long startTime = System.currentTimeMillis();
-				String signFileName = FileLoadTest.testFileLoad2(uploadUrl,sourcesFilePoth);
+				String signFileName = FileLoadUtils.testFileLoad2(uploadUrl,sourcesFilePoth);
 				System.out.println("signFileName="+signFileName);
 				if(!"fail".equals(signFileName)) {
 					String url = downloadUrl+"?filename="+signFileName;
 					try {
 						String fileName = FileUtils.getFileName(sourcesFilePoth);
-						HttpRequest.downLoadFromUrl(url, FileUtils.getPrefix(fileName)+i+"_sign.ofd", signFileFolder);
+						FileDownloadUtils1.downLoadFromUrl(url, FileUtils.getPrefix(fileName)+i+"_sign.ofd", signFileFolder);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

@@ -11,7 +11,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public class HttpURLConnectionDemo {
 	
-	
+	//访问接口
 	 public static String doPost(String URL,String paramStr){
 	        OutputStreamWriter out = null;
 	        BufferedReader in = null;

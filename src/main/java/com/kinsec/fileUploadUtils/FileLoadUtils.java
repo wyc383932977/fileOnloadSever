@@ -1,4 +1,4 @@
-package com.kinsec.fileUtils;
+package com.kinsec.fileUploadUtils;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -32,14 +32,14 @@ import org.apache.http.util.EntityUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-public class FileLoadTest {
+public class FileLoadUtils {
 
 	// 82ms
 		public static String testFileLoad2(String url,String fileName) throws Exception{
 			// 设定要上传的普通Form Field及其对应的value
 			ArrayList<FormFieldKeyValuePair> ffkvp = new ArrayList<FormFieldKeyValuePair>();
-			ffkvp.add(new FormFieldKeyValuePair("phone", "123456789"));// 其他参数
-			ffkvp.add(new FormFieldKeyValuePair("receiver", "123123"));
+//			ffkvp.add(new FormFieldKeyValuePair("phone", "123456789"));// 其他参数
+//			ffkvp.add(new FormFieldKeyValuePair("receiver", "123123"));
 //			ffkvp.add(new FormFieldKeyValuePair("type", "png"));
 
 			// 设定要上传的文件
@@ -60,11 +60,8 @@ public class FileLoadTest {
 		}
 
 		//httpClient文件上传 797ms
-		public static void testFileLoad4() {
+		public static void testFileLoad4(String sURL,String sTestsetFile) {
 			// 文件sTestsetFile：solr_etl_agent35.json是存有JSON字符串的文件
-	        String sTestsetFile="D:\\ofd\\blank.ofd";
-	        
-	        String sURL="http://127.0.0.1:8080/fileOnloadServerMVC/fileUpload";
 	        
 	        CloseableHttpClient httpClient = HttpClients.createDefault();
 	        HttpPost uploadFile = new HttpPost(sURL);

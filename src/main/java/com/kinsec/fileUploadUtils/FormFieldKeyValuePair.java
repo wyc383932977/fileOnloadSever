@@ -1,4 +1,4 @@
-package com.kinsec.fileUtils;
+package com.kinsec.fileUploadUtils;
 
 public class FormFieldKeyValuePair {  
     private static final long serialVersionUID = 1L;  

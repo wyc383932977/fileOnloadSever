@@ -1,4 +1,4 @@
-package com.kinsec.fileUtils;
+package com.kinsec.fileUploadUtils;
 
 import java.io.Serializable;
 
